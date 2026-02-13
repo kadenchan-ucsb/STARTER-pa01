@@ -57,9 +57,9 @@ void playGame(BST &handOne, BST &handTwo){
     
     turn++;
   }
-  cout<<"Alice's cards" <<endl; 
+  cout<<"\nAlice's cards" <<endl; 
   handOne.printInOrder();
-  cout<<"Bob's cards" <<endl;
+  cout<<"\nBob's cards" <<endl;
   handTwo.printInOrder();
 }
 
