@@ -106,13 +106,13 @@ int main(int argv, char** argc){
     turn++;
   }
 
-  cout << "\nAlice's hand: "<<endl;
+  cout << "\nAlice's cards: "<<endl;
   for (const auto& card : handOne) {
     cout << card << " "<<endl;
   }
   cout << endl;
 
-  cout << "Bob's hand: "<<endl;
+  cout << "Bob's cards: "<<endl;
   for (const auto& card : handTwo) {
     cout << card << " "<<endl;
   }
