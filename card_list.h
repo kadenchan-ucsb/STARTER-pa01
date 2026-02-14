@@ -65,6 +65,7 @@ class Iterator{
         Iterator& operator++();
         Iterator& operator--();
         bool operator!=(const Iterator& right) const;
+        bool operator==(const Iterator& right) const;
         
 };
 #endif

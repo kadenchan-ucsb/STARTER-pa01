@@ -144,6 +144,12 @@ void BST::clear(Node *n) {
     delete n;
 } 
 Iterator& Iterator::operator++(){
+    if (!curr) {
+        if (!tree || !tree->root) return *this;
+        curr = tree->root;
+        while (curr->left) curr = curr->left;
+        return *this;
+    }
     if (curr->right) {
         curr = curr->right; 
         while (curr->left) {
@@ -160,6 +166,12 @@ Iterator& Iterator::operator++(){
     return *this;
 }
 Iterator& Iterator::operator--(){
+    if (!curr) {
+        if (!tree || !tree->root) return *this;
+        curr = tree->root;
+        while (curr->right) curr = curr->right;
+        return *this;
+    }
     if (curr->left) {
         curr = curr->left; 
         while (curr->right) {
@@ -201,4 +213,10 @@ bool Iterator::operator!=(const Iterator& right) const{
         return false;
     }
     return true;
+}
+bool Iterator::operator==(const Iterator& right) const{
+    if(curr==right.curr){
+        return true;
+    }
+    return false;
 }
